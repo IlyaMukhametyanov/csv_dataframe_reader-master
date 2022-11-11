@@ -1,0 +1,39 @@
+ dataframes_bioradio_vadim_mono: dict = read_bioradio("resources/brainfackVadimEx.csv", "\t", BIORADIO_CSV_QUOTECHAR,
+                                                        BIORADIO_COLUMN_LINE_NUM)
+
+
+    dataframes_bioradio_vlad_mono: dict = read_bioradio("resources/brainfackVadimEx.csv", "\t", BIORADIO_CSV_QUOTECHAR,
+                                                        BIORADIO_COLUMN_LINE_NUM)
+
+
+    dataframes_bioradio_ilya_stress: dict = read_bioradio("resources/brainfackVadimEx.csv", "\t", BIORADIO_CSV_QUOTECHAR,
+                                                        BIORADIO_COLUMN_LINE_NUM)
+
+    dataframes_bioradio_vadim_stress: dict = read_bioradio("resources/brainfackVadimEx.csv", "\t", BIORADIO_CSV_QUOTECHAR,
+                                                        BIORADIO_COLUMN_LINE_NUM)
+
+    dataframes_bioradio_vlad_stress: dict = read_bioradio("resources/brainfackVadimEx.csv", "\t", BIORADIO_CSV_QUOTECHAR,
+                                                        BIORADIO_COLUMN_LINE_NUM)
+
+
+
+     dataframes_bioradio_ilya_mono[BioRadioColumnsName.EEG1.value]
+    dataframes_bioradio_ilya_mono[BioRadioColumnsName.EEG2.value]
+    dataframes_bioradio_ilya_mono[BioRadioColumnsName.EEG3.value]
+    dataframes_bioradio_ilya_mono[BioRadioColumnsName.EEG4.value]
+    dataframes_bioradio_ilya_mono[BioRadioColumnsName.ECG.value]
+
+
+
+
+
+
+    for i in NewBioRadioColumnsName.list():
+        print(dataframes_bioradio_ilya_mono[i][BIORADIO_START_POINT:BIORADIO_END_POINT].to_numpy())
+        plt.plot(dataframes_bioradio_ilya_mono[i][BIORADIO_START_POINT:BIORADIO_END_POINT].to_numpy())
+        plt.show()
+
+    for i in OldBioRadioColumnsName.list():
+        print(i)
+        plt.plot(dataframes_bioradio_vlad_mono[i][BIORADIO_START_POINT:BIORADIO_END_POINT].to_numpy())
+        plt.show()
